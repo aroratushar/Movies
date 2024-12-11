@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieDescriptionTableViewCell" id="KGk-i7-Jjw" customClass="MovieDescriptionTableViewCell" customModule="Movie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Line" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHl-uz-9mk">
+                        <rect key="frame" x="12" y="12" width="351" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OverView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn9-QH-cop">
+                        <rect key="frame" x="12" y="41" width="351" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCR-Hn-knr">
+                        <rect key="frame" x="12" y="75" width="351" height="33"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="LkV-aC-ilU"/>
+                        </constraints>
+                        <string key="text">Label iushdiaushdiuashdau sdiuashd iuahsdiuash diuahdiuah sdiuha isudha siudh aiushdiuah diuahsdiuashd iuashd iuashd iuashd iuahsd uaisd Tushar</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NCR-Hn-knr" secondAttribute="bottom" constant="12" id="1NS-ZR-LDD"/>
+                    <constraint firstItem="Zn9-QH-cop" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="4GW-UJ-zMZ"/>
+                    <constraint firstItem="NCR-Hn-knr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="75" id="KhS-aC-Jmh"/>
+                    <constraint firstItem="NCR-Hn-knr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Pbx-yE-vsY"/>
+                    <constraint firstItem="NCR-Hn-knr" firstAttribute="top" secondItem="Zn9-QH-cop" secondAttribute="bottom" constant="13" id="R1t-sm-Zz4"/>
+                    <constraint firstAttribute="trailing" secondItem="FHl-uz-9mk" secondAttribute="trailing" constant="12" id="Wqd-ec-VbF"/>
+                    <constraint firstItem="Zn9-QH-cop" firstAttribute="top" secondItem="FHl-uz-9mk" secondAttribute="bottom" constant="8" symbolic="YES" id="fwx-io-oYj"/>
+                    <constraint firstItem="FHl-uz-9mk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="g1W-Mv-9Xp"/>
+                    <constraint firstAttribute="trailing" secondItem="Zn9-QH-cop" secondAttribute="trailing" constant="12" id="knz-v6-jge"/>
+                    <constraint firstAttribute="trailing" secondItem="NCR-Hn-knr" secondAttribute="trailing" constant="12" id="ty3-Ez-hop"/>
+                    <constraint firstItem="FHl-uz-9mk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="wLD-QM-akA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="movieDescriptionLabel" destination="NCR-Hn-knr" id="DnU-gG-pb7"/>
+                <outlet property="tagLineLabel" destination="FHl-uz-9mk" id="nWN-NJ-VGi"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="20"/>
+        </tableViewCell>
+    </objects>
+</document>
