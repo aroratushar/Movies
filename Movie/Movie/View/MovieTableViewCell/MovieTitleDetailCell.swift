@@ -12,18 +12,23 @@ class MovieTitleDetailCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var releaseDate: UILabel!
-    @IBOutlet weak var duration: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func populate(model: MovieDetailModel?) {
+        guard let movieModel = model else { return }
+        titleLabel.text = movieModel.belongs_to_collection?.name
+        let releaseDate = (movieModel.release_date ?? "") + " " + "(\(movieModel.original_language ?? ""))"
+        let genres = movieModel.genres?.compactMap { $0.name }
+        let genresString = genres?.joined(separator: ",") ?? ""
+        let durationMovie =  minutesToHoursAndMinutes(movieModel.runtime ?? 0)
+        let movieTime = "\(durationMovie.hours) h \(durationMovie.leftMinutes) mins"
+        genreLabel.text = releaseDate + " " + genresString + " " + movieTime
+    }
+    
+    func minutesToHoursAndMinutes(_ minutes: Int) -> (hours: Int , leftMinutes: Int) {
+        return (minutes / 60, (minutes % 60))
+    }
 }

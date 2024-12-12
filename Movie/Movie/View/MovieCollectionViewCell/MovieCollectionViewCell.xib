@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,18 +19,33 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oT-DE-F5Y">
                         <rect key="frame" x="8" y="8" width="172" height="212"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fk-CV-QcA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fk-CV-QcA">
                                 <rect key="frame" x="0.0" y="0.0" width="172" height="212"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4U-N6-hIy">
+                                <rect key="frame" x="119" y="159" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="1yW-mb-zS1"/>
+                                    <constraint firstAttribute="height" constant="45" id="bt9-Xn-Wfy"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="favouriteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="H4G-Ot-tjd"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Fk-CV-QcA" secondAttribute="trailing" id="0kv-iR-Ode"/>
                             <constraint firstAttribute="height" constant="212" id="24K-J9-wGn"/>
+                            <constraint firstAttribute="bottom" secondItem="z4U-N6-hIy" secondAttribute="bottom" constant="8" id="gXQ-hH-evo"/>
                             <constraint firstItem="3Fk-CV-QcA" firstAttribute="leading" secondItem="3oT-DE-F5Y" secondAttribute="leading" id="pwG-cL-IxU"/>
                             <constraint firstItem="3Fk-CV-QcA" firstAttribute="top" secondItem="3oT-DE-F5Y" secondAttribute="top" id="ui2-T5-FCQ"/>
                             <constraint firstAttribute="bottom" secondItem="3Fk-CV-QcA" secondAttribute="bottom" id="vX8-3O-MzG"/>
+                            <constraint firstAttribute="trailing" secondItem="z4U-N6-hIy" secondAttribute="trailing" constant="8" id="yeZ-Rp-w7m"/>
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FWg-xu-9d4">
@@ -65,6 +79,7 @@
                 <constraint firstAttribute="trailing" secondItem="3oT-DE-F5Y" secondAttribute="trailing" constant="8" id="YBA-jC-5e1"/>
             </constraints>
             <connections>
+                <outlet property="favouriteButton" destination="z4U-N6-hIy" id="7Oy-aR-hHC"/>
                 <outlet property="moviePosterImageView" destination="3Fk-CV-QcA" id="Qc4-pr-yW9"/>
                 <outlet property="movieTitleLabel" destination="sBl-Os-f0t" id="mkS-dc-wd6"/>
                 <outlet property="releaseDateLabel" destination="sRx-vr-Uww" id="Rch-j4-M6f"/>
@@ -73,11 +88,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

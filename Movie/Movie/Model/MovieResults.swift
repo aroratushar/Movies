@@ -57,5 +57,21 @@ struct MovieResults : Codable {
         vote_average = try values.decodeIfPresent(Double.self, forKey: .vote_average)
         vote_count = try values.decodeIfPresent(Int.self, forKey: .vote_count)
     }
-
+    
+    init(movieId: Int, title: String, description: String, releaseDate: String, posterPath: String) {
+        self.id = movieId
+        self.title = title
+        self.overview = description
+        self.release_date = releaseDate
+        self.poster_path = posterPath
+        self.adult = nil
+        self.backdrop_path = nil
+        self.genre_ids = nil
+        self.original_title = nil
+        self.original_language = nil
+        self.popularity = nil
+        self.video = nil
+        self.vote_average = nil
+        self.vote_count = nil
+    }
 }

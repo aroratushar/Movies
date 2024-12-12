@@ -8,13 +8,15 @@
 import UIKit
 
 class MovieCastTableViewCell: UITableViewCell {
+    
     static let identifier = String(describing: MovieCastTableViewCell.self)
+    private var castInfoArray: [Cast] = []
     private let cellIdentifier = MovieCollectionViewCell.identifier
+    
     @IBOutlet weak var castCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setUp()
     }
     
@@ -24,16 +26,22 @@ class MovieCastTableViewCell: UITableViewCell {
         castCollectionView.delegate = self
     }
     
+    func populate(cast: MovieCastModel?) {
+        guard let movieCast = cast, let castInfo = movieCast.cast  else { return }
+        castInfoArray = castInfo
+        castCollectionView.reloadData()
+    }
 }
 
 extension MovieCastTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        castInfoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = cellIdentifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? MovieCollectionViewCell
+        cell?.populateCast(model: castInfoArray[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     
