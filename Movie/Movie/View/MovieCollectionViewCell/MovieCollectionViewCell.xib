@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oT-DE-F5Y">
                         <rect key="frame" x="8" y="8" width="172" height="212"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fk-CV-QcA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fallBack" translatesAutoresizingMaskIntoConstraints="NO" id="3Fk-CV-QcA">
                                 <rect key="frame" x="0.0" y="0.0" width="172" height="212"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -88,6 +88,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="fallBack" width="768" height="768"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
