@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 
 protocol MovieCast {
-    func fetchMovieCast(movieId: Int, completion: @escaping (Result<MovieCastModel, AFError>) -> Void)
+    func fetchMovieCast(movieId: Int, completion: @escaping (Result<MovieCastModel, Error>) -> Void)
 }
 
 class MovieCastRetriever: MovieCast {
     
-    func fetchMovieCast(movieId: Int, completion: @escaping (Result<MovieCastModel, AFError>) -> Void) {
+    func fetchMovieCast(movieId: Int, completion: @escaping (Result<MovieCastModel, Error>) -> Void) {
         
         let url = API.baseURL + API.Endpoint.movieDetail + String(movieId) + API.Endpoint.movieCast
         
@@ -23,7 +23,7 @@ class MovieCastRetriever: MovieCast {
             method: .get,
             parameters: nil,
             headers: [API.Headers.Keys.authorization: API.Headers.Values.authorizationToken]
-        ) { (result: Result<MovieCastModel, AFError>) in
+        ) { (result: Result<MovieCastModel, Error>) in
             switch result {
             case .success((let MovieCastResponse)):
                 completion(.success((MovieCastResponse)))

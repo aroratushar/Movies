@@ -29,7 +29,7 @@ class APIManager {
         method: HTTPMethodType,
         parameters: [String: Any]? = nil,
         headers: HTTPHeaders? = nil,
-        completion: @escaping (Result<T, AFError>) -> Void
+        completion: @escaping (Result<T, Error>) -> Void
     ) {
         let httpMethod: HTTPMethod
         switch method {

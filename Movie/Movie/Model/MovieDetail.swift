@@ -64,7 +64,9 @@ struct MovieDetailModel : Codable {
         case vote_average = "vote_average"
         case vote_count = "vote_count"
     }
+}
 
+extension MovieDetailModel {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         adult = try values.decodeIfPresent(Bool.self, forKey: .adult)
@@ -94,5 +96,4 @@ struct MovieDetailModel : Codable {
         vote_average = try values.decodeIfPresent(Double.self, forKey: .vote_average)
         vote_count = try values.decodeIfPresent(Int.self, forKey: .vote_count)
     }
-
 }

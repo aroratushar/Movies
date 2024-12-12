@@ -20,7 +20,9 @@ struct MovieBase : Codable {
         case total_pages = "total_pages"
         case total_results = "total_results"
     }
+}
 
+extension MovieBase {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         page = try values.decodeIfPresent(Int.self, forKey: .page)

@@ -9,9 +9,9 @@ import Foundation
 
 class MovieSearchViewModel {
     
-    private let movieStorage = MovieStorage()
-    private var movieDiscovery: MovieDiscoveryRetriever
-    private var movieSearch: MovieSearchRetriever
+    var movieStorage: MoviePersistance
+    var movieDiscovery: MovieDiscovery
+    var movieSearch: MovieSearch
     private(set) var movies: [MovieResults] = []
     private var currentPage = 1
     private var isLoading = false
@@ -20,9 +20,10 @@ class MovieSearchViewModel {
     var onMoviesFetched: (() -> Void)?
     var onError: ((String) -> Void)?
     
-    init(retriever: MovieDiscoveryRetriever = MovieDiscoveryRetriever()) {
+    init(retriever: MovieDiscovery = MovieDiscoveryRetriever()) {
         movieDiscovery = retriever
         movieSearch = MovieSearchRetriever()
+        movieStorage = MovieStorage()
     }
     
     func fetchMovies(reset: Bool = false) {

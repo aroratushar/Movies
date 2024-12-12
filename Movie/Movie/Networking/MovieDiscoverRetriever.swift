@@ -9,14 +9,12 @@ import Foundation
 import Alamofire
 
 protocol MovieDiscovery {
-    func fetchMovies(page: Int,
-                   completion: @escaping (Result<MovieBase, AFError>) -> Void)
+    func fetchMovies(page: Int, completion: @escaping (Result<MovieBase, Error>) -> Void)
 }
 
 class MovieDiscoveryRetriever: MovieDiscovery {
     
-    func fetchMovies(page: Int,
-                   completion: @escaping (Result<MovieBase, AFError>) -> Void) {
+    func fetchMovies(page: Int, completion: @escaping (Result<MovieBase, Error>) -> Void) {
         
         let parameters: [String: String] = [
             "page": "\(page)"
@@ -29,7 +27,7 @@ class MovieDiscoveryRetriever: MovieDiscovery {
             method: .get,
             parameters: parameters,
             headers: [API.Headers.Keys.authorization: API.Headers.Values.authorizationToken]
-        ) { (result: Result<MovieBase, AFError>) in
+        ) { (result: Result<MovieBase, Error>) in
             switch result {
             case .success((let MovieResponse)):
                 completion(.success((MovieResponse)))
@@ -37,5 +35,12 @@ class MovieDiscoveryRetriever: MovieDiscovery {
                 completion(.failure(error))
             }
         }
+    }
+}
+
+class MockMovieDiscoveryRetriever: MovieDiscovery {
+    var stubbedFetchMoviesResult: Result<MovieBase, Error>?
+    func fetchMovies(page: Int, completion: @escaping (Result<MovieBase, Error>) -> Void) {
+        completion(stubbedFetchMoviesResult!)
     }
 }
